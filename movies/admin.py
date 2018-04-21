@@ -16,7 +16,9 @@ class MovieInline(admin.StackedInline):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
-    pass
+    inlines = (
+        AliasInline,
+    )
 
 
 @admin.register(Movie)
