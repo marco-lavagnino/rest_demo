@@ -44,5 +44,5 @@ class Movie(models.Model):
     def __str__(self):
         return "{} ({})".format(self.title, self.release_year)
 
-    def roman_representation(self):
+    def roman_release_year(self):
         return int2roman(self.release_year, only_ascii=True)

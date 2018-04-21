@@ -23,6 +23,7 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
             'id',
             'title',
             'release_year',
+            'roman_release_year',
             'actors',
             'directors',
             'producers',
