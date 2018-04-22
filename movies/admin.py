@@ -4,14 +4,7 @@ from movies.models import Person, Movie, Alias
 
 class AliasInline(admin.StackedInline):
     model = Alias
-
-
-class PersonInline(admin.StackedInline):
-    model = Person
-
-
-class MovieInline(admin.StackedInline):
-    model = Movie
+    extra = 0
 
 
 @admin.register(Person)

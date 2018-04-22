@@ -13,6 +13,9 @@ class Alias(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'aliases'
+
 
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
@@ -20,6 +23,9 @@ class Person(models.Model):
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
+
+    class Meta:
+        verbose_name_plural = 'people'
 
 
 class Movie(models.Model):
