@@ -1,8 +1,14 @@
 from rest_framework import serializers
-from movies.models import Person, Movie
+from movies.models import Person, Movie, Alias
 
 
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
+    aliases = serializers.SlugRelatedField(
+        many=True,
+        slug_field='name',
+        queryset=Alias.objects.all(),
+    )
+
     class Meta:
         model = Person
         fields = (
