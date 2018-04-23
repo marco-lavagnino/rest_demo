@@ -40,4 +40,9 @@ showing that I can solve a fizz-buzz test if I have access to Google.
 
 I think faster results can be achieved if open source libraries are used
 instead of coding everything from scratch. These libraries are (or should
-be) battle tested and ideally bug-free.
+be) battle tested and ideally bug-free. This is why I chose to use this
+library.
+
+### Gunicorn and Whitenoise
+
+These dependencies were included to allow the deployment of the project.
