@@ -2,8 +2,18 @@ from rest_framework import serializers
 from movies.models import Person, Movie, Alias
 
 
+class AliasSlugRelatedField(serializers.SlugRelatedField):
+
+    def to_internal_value(self, data):
+        try:
+            alias, created = self.get_queryset().get_or_create(name=data, person=None)
+            return alias
+        except (TypeError, ValueError):
+            self.fail('invalid')
+
+
 class PersonSerializer(serializers.HyperlinkedModelSerializer):
-    aliases = serializers.SlugRelatedField(
+    aliases = AliasSlugRelatedField(
         many=True,
         slug_field='name',
         queryset=Alias.objects.all(),

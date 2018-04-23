@@ -8,6 +8,7 @@ class Alias(models.Model):
         'Person',
         on_delete=models.CASCADE,
         related_name='aliases',
+        null=True,
     )
 
     def __str__(self):
